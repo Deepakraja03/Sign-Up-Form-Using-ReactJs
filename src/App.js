@@ -1,25 +1,43 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
+import Inputfield from './components/Inputfield';
+import Sample from './components/Sample';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const App = () => {
+
+    const signUp = () => {
+        alert("Button Clicked");
+    }
+
+    return (
+        <div className = 'form'>
+            <div className='container'>
+            <h1 id = 'label'>SignUp</h1>
+            <div id = 'textbox'>
+                <Inputfield type={'text'} placeholder={'Username'} className = {'username'}/>
+            </div>
+            <div id = 'email'>
+                <Inputfield type = 'email' placeholder = 'email' className = 'email' />
+            </div>
+            <div id = 'pass'>
+                <Inputfield type = 'password' placeholder = 'password' className = 'pass' />
+            </div>
+            <div id = 'pass'>
+                <Inputfield type = 'password' placeholder = 'confirm password' className = 'cpass' />
+            </div>
+            <div id = 'my-button'>
+                <button 
+                type = 'submit' 
+                className = 'my-button'
+                onClick = {signUp}
+                >SignUp</button>
+            </div>
+            <div>
+                <Sample/>
+            </div>
+            </div>
+        </div>
+    );
 }
 
 export default App;
